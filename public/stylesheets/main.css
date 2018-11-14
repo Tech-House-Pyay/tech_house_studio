@@ -90,7 +90,7 @@ Heading :	'Fjalla One', sans-serif;
 /* Mobile Layout: 320px */
 /* Wide Mobile Layout: 480px */
 /* =================================== */
-/*  Basic Style 
+/*  Basic Style
 /* =================================== */
 ::-moz-selection {
   /* Code for Firefox */
@@ -3180,7 +3180,7 @@ a {
 
 /* ---------------- 09 About Educare Area ---------------- */
 .static-banner {
-  background: url(../img/slider/static-banner.jpg) no-repeat;
+  background: url(/images/code.jpg) no-repeat;
   background-size: cover;
   height: 300px;
   position: relative;

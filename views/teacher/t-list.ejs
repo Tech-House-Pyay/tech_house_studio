@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <head>
+        <% include ../partial/head %>
+    </head>
+    <body>
+        <% include ../partial/header %>
+        <main>
+            <!-- Static Banner Area Start -->
+            <section id="slider">
+                <div class="static-banner relative">
+                    <div class="overlay blue-overlay-5"></div>
+                    <div class="page-head">
+                        <h2 class="page-title">Trainer List</h2>
+                        <ul class="page-title-btn">
+                            <li><a href="/" >Home <i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="active">Teachers list</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Static Banner Area End -->
+            <section class="section-full teacher">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="event-filter flex">
+                                <div class="single-filter ft-360">
+                                    <div class="select-ct">
+                                        <select>
+                                            <option value="1">Showing Newest Teachers</option>
+                                            <option value="2">Showing Alphabetically</option>
+                                            <option value="3">Showing newest Teachers</option>
+                                            <option value="4">Showing newest Teachers</option>
+                                            <option value="4">Showing Oldest Teachers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="single-filter ft-330">
+                                    <input placeholder="Enter Teacher Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Teacher Name'" type="text">
+                                </div>
+                                <div class="single-filter ft-165">
+                                </div>
+                                <div class="single-filter ft-135 mr-n">
+                                    <a href="#" class="btn wh-btn">Find Trainer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="course-category-widget edu-widget">
+                                <h3>Course Categories</h3>
+                                <div class="widget-body">
+                                    <!-- <ul>
+                                        <li class="check"><input type="checkbox" id="one"><label for="one"><span></span>All Teachers</label></li>
+                                        <li class="check"><input type="checkbox" id="two"><label for="two"><span></span>Business Faculty</label></li>
+                                        <li class="check"><input type="checkbox" id="three"><label for="three"><span></span>Design Faculty</label></li>
+                                        <li class="check"><input type="checkbox" id="four"><label for="four"><span></span>Development Faculty</label></li>
+                                        <li class="check"><input type="checkbox" id="five"><label for="five"><span></span>Film & Media Faculty</label></li>
+                                        <li class="check"><input type="checkbox" id="six"><label for="six"><span></span>Photography Faculty</label></li>
+                                        <li class="check"><input type="checkbox" id="seven"><label for="seven"><span></span>Writing Faculty</label></li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-8 course-grid1">
+                            <div class="row">
+                                <div class="total-teacher">
+                                  <% for(var i = 0; i< tea.length; i++){%>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="single-teacher mt-30">
+                                            <figure>
+                                                <img src="image/<%=tea[i].imgUrl%> " alt="" class="img-responsive">
+                                                <figcaption>
+                                                    <h4><a href="/teacher/tdetail/<%= tea[i]._id %>"> <%=tea[i].name%> </a></h4>
+                                                    <span><%= tea[i].job %></span>
+                                                    <p> <%=tea[i].desc%></p>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                  <%}%>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 mt-60 text-center">
+                                    <button class="btn load-course">Load More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer Area Start -->
+        <% include ../partial/footer %>
+        <!-- Footer Area End -->
+
+
+        <!--
+        JavaScripts
+        ========================== -->
+        <!-- <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/materialize.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCaX4fFEQRiTJoeclXKZRaFh2fYfps_Y&callback=initMap"></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+        <!-- <script src="js/jquery.nice-select.js"></script> -->
+        <!-- <script src="js/jquery.jCounter-0.1.4.js"></script>
+
+        <script src="js/main.js"></script> -->
+        <script src="/javascripts/minified/minified.js"></script>
+        <!-- <script src="js/map-init.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <head>
+        <% include ../partial/head %>
+    </head>
+    <body>
+        <% include ../partial/header %>
+        <main>
+            <!-- Static Banner Area Start -->
+            <section id="slider">
+                <div class="static-banner relative">
+                    <div class="overlay blue-overlay-5"></div>
+                    <div class="page-head">
+                        <h2 class="page-title"><%=tea.name%></h2>
+                        <ul class="page-title-btn">
+                            <li><a href="/">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="active">Teacher Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Static Banner Area End -->
+            <!-- Web Design Course Area Start -->
+            <section class="section-full teacher-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="web-course">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="left-web-course">
+                                    <div class="teacher-top flex">
+                                        <div class="teacher-img">
+                                            <img src="../image/<%=tea.imgUrl%>" alt="" class="images-responsive">
+                                        </div>
+                                        <div class="teacher-top-content">
+                                            <h2><%= tea.name%></h2>
+                                            <p><%= tea.job%></p>
+                                            <a href="#" class="btn">Follow Me</a>
+                                            <a href="#" class="btn">Send Me Message</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-menu mt-20">
+                                        <ul id="tabs-swipe-demo" class="tabs course-tab">
+                                            <li class="tab"><a href="#about">About Me</a></li>
+                                            <li class="tab"><a href="#course">My Courses</a></li>
+                                            <!-- <li class="tab"><a class="active" href="#reviews">My Reviews</a></li> -->
+                                        </ul>
+                                    </div>
+                                    <div id="about" class="about mt-30">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <p><%= tea.desc%></p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div id="course" class="course mt-30 course-outline text-center">
+                                      <% for(var i =0; i < course.length; i++){%>
+                                        <ul class="flex space-between no-flex-xs">
+                                            <li><img src="../image/<%=course[i].imgUrl%>" alt="" width="70px" height="40px"></li>
+                                            <li class="head"><%= course[i].name%></li>
+                                            <li class="step"><%= course[i].week%> Weeks</li>
+                                            <li class="dollar"><%= course[i].fee%> Kyats</li>
+                                            <li><a href="/course/cdetail/<%= course[i]._id%>">View Course Details</a></li>
+                                        </ul>
+                                      <%}%>
+                                    </div>
+                                    <!-- <div id="reviews" class="reviews mt-30">
+                                        <div class="teacher-rating-top flex no-flex-xs">
+                                            <div class="rating flex no-flex-xs">
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li>Average</li>
+                                                        <li class="av-rating">4.9</li>
+                                                        <li>(2 Ratings)</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="rating-body">
+                                                    <h4>Provide Your Rating</h4>
+                                                    <ul>
+                                                        <li>Quality <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="feed-back">
+                                                <h4>Your Feedback</h4>
+                                                <textarea></textarea>
+                                                <button class="btn">Submit</button>
+                                            </div>
+                                        </div>
+                                        <div class="total-comment mt-50">
+                                            <div class="single-comment mt-30">
+                                                <div class="comment-head">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="images/extra/comment-person.png" alt="...">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-comment mt-30">
+                                                <div class="comment-head">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="images/extra/comment-person.png" alt="...">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="right-web-course">
+                                    <div class="single-info flex space-between">
+                                        <div class="single-stat">
+                                            <h3><%= course.length%></h3>
+                                            <p>Running Course</p>
+                                        </div>
+                                        <!-- <div class="single-stat">
+                                            <h3>259</h3>
+                                            <p>Active Followers</p>
+                                        </div>
+                                        <div class="single-stat">
+                                            <h3>4.9</h3>
+                                            <p>Average Rating</p>
+                                        </div> -->
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-envelope"></span>Email</h4>
+                                        <h4><%=tea.email%></h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-megaphone"></span>Phone</h4>
+                                        <h4><%= tea.phone%></h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-facebook"></span>Facebook</h4>
+                                        <h4><%= tea.facebook%></h4>
+                                    </div>
+                                </div>
+                                <!-- <div class="leave-comment send-msg">
+                                    <h4>Send Me Message</h4>
+                                    <form action="#">
+                                        <p><input placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" type="text"></p>
+
+                                        <p><input placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" type="email"></p>
+                                        <p><input placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" type="text"></p>
+                                        <p><textarea placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'"></textarea></p>
+                                        <p><button class="btn submit-btn">Send Message</button></p>
+                                    </form>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- / #Web Design Course End -->
+        </main>
+        <!-- Footer Area Start -->
+        <% include ../partial/footer %>
+        <!-- Footer Area End -->
+
+
+        <!--
+        JavaScripts
+        ========================== -->
+        <!-- <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/materialize.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script> -->
+        <%# <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCaX4fFEQRiTJoeclXKZRaFh2fYfps_Y&callback=initMap"></script> %>
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+        <!-- <script src="js/jquery.nice-select.js"></script> -->
+        <!-- <script src="js/jquery.jCounter-0.1.4.js"></script>
+
+        <script src="js/main.js"></script> -->
+        <script src="/javascripts/minified/minified.js"></script>
+        <script src="/javascripts/map-init.js"></script>
+    </body>
+</html>

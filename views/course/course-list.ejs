@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <head>
+        <% include ../partial/head %>
+    </head>
+    <body>
+        <% include ../partial/header %>
+        <main>
+            <!-- Static Banner Area Start -->
+            <section id="slider">
+                <div class="static-banner relative">
+                    <div class="overlay blue-overlay-5"></div>
+                    <div class="page-head">
+                        <h2 class="page-title">Tech House Studio Course</h2>
+                        <ul class="page-title-btn">
+                            <li><a href="/">Home <i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            <li><a href="/course/clist" class="active">Training Course List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Static Banner Area End -->
+            <!-- Regular Course Area Start -->
+            <section class="section-full course-grid1">
+                <div class="container">
+                    <div class="popular-course">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8 col-sm-12">
+                                <div class="section-head text-center pb-70">
+                                    <h2 class="first-title">Regular Courses</h2>
+                                    <p> We support this course regularly. So, you can connect our course.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <% for(var i = 0; i< course.length; i++){%>
+                                  <div class="single-list-course row no-gutter">
+                                      <div class="col-xs-12 col-sm-4">
+                                          <img src="image/<%= course[i].imgUrl%>" alt="">
+                                      </div>
+                                      <div class="col-xs-12 col-sm-8">
+                                          <div class="list-course-content">
+                                              <h3><a href="/course/cdetail/<%=course[i]._id%>"><%= course[i].name%></a></h3>
+                                              <p><%= course[i].desc%></p>
+                                              <div class="course-bottom-list flex space-between">
+                                                  <div class="single-bottom learn-b">
+                                                      <a href="/course/cdetail/<%=course[i]._id%>" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
+                                                  </div>
+                                                  <!-- <div class="single-bottom icon">
+                                                      <i class="fa fa-star"></i>
+                                                      <i class="fa fa-star"></i>
+                                                      <i class="fa fa-star"></i>
+                                                      <i class="fa fa-star"></i>
+                                                      <i class="fa fa-star"></i>
+                                                  </div>
+                                                  <div class="single-bottom review">
+                                                      <span>20 Reviews</span>
+                                                  </div> -->
+                                                  <div class="single-bottom trainer">
+                                                      <a href="/teacher/tdetail/<%=course[i].teacher_id._id%>"><span class="et-line icon-profile-male"></span><span><%= course[i].teacher_id.name%></span></a>
+                                                  </div>
+                                                  <div class="single-bottom seats">
+                                                      <span>Total <%=course[i].seats%> Seats</span>
+                                                  </div>
+                                                  <div class="single-bottom dollar">
+                                                      <span><%=course[i].fee%> Kyats</span>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                <%}%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 mt-60 text-center">
+                                <a href="#" class="btn load-course">View All Courses</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- / #Regular Course End -->
+                <!-- Col To Action Start -->
+                <!-- <section class="cta-1 cta2 ct3">
+                    <div class="cta-bg2 relative">
+                        <div class="overlay cta-overlay-bg-blue"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cta-content">
+                                        <h2>Thousands of students are graduated. Why not you?</h2>
+                                        <form action="#" class="cta-register">
+                                            <div class="row">
+                                                <h3 class="text-center mb-40 primary-color fz-24">Register Now</h3>
+                                                <div class="col-md-offset-1 col-md-5 col-sm-6 col-xs-12">
+                                                    <p><input type="text"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" placeholder="Enter your Full Name"></p>
+                                                    <p><input type="email"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" placeholder="Enter your Full Name"></p>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                                    <p><input type="text"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" placeholder="Enter your Full Name"></p>
+                                                    <div class="select-ct">
+                                                        <select>
+                                                            <option value="1">Choose course</option>
+                                                            <option value="2">Saab</option>
+                                                            <option value="3">Opel</option>
+                                                            <option value="4">Audi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-center"><button class="submit-btn">Submit</button></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <!-- Col To Action End -->
+                <!-- Core Features Area Start -->
+                <section class="section-full">
+                    <div class="container">
+                        <div class="core-feature">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-8 col-sm-12">
+                                    <div class="section-head text-center pb-100">
+                                        <h2 class="first-title">Our Core Features</h2>
+                                        <p>In our coure, we decide for student to train for student as following description.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="core-feature-body">
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="single-feature">
+                                                <div class="col-md-2 col-sm-3">
+                                                    <div class="single-icon">
+                                                        <a href="#">
+                                                            <span class="et-line icon-heart text-black"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10 col-sm-9">
+                                                    <div class="feture-content">
+                                                        <h4 class="media-heading"><a href="#">Quality Certification</a></h4>
+                                                        <p>One of our gole is to become developer who mor improve quality of developing.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="single-feature">
+                                                    <div class="col-md-2 col-sm-3">
+                                                        <div class="single-icon">
+                                                            <a href="#">
+                                                                <span class="et-line icon-hotairballoon text-black mt-10"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-9">
+                                                        <div class="feture-content">
+                                                            <h4 class="media-heading"><a href="#">Learning best practice</a></h4>
+                                                            <p>Our trainer teaching method is depending on student. They will train how to learn with self study</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="single-feature">
+                                                        <div class="col-md-2 col-sm-3">
+                                                            <div class="single-icon">
+                                                                <a href="#">
+                                                                    <span class="et-line icon-telescope text-black mt-10"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-10 col-sm-9">
+                                                            <div class="feture-content">
+                                                                <h4 class="media-heading"><a href="#">Online Resources</a></h4>
+                                                                <p>After report certificate project, we will keep student project on online</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="row">
+                                                        <div class="single-feature">
+                                                            <div class="col-md-2 col-sm-3">
+                                                                <div class="single-icon">
+                                                                    <a href="#">
+                                                                        <span class="et-line icon-search text-black mt-10"></span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10 col-sm-9">
+                                                                <div class="feture-content">
+                                                                    <h4 class="media-heading"><a href="#">Study plan tutors</a></h4>
+                                                                    <p>Trainer always study about their training class because to become update course</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="single-feature">
+                                                                <div class="col-md-2 col-sm-3">
+                                                                    <div class="single-icon">
+                                                                        <a href="#">
+                                                                            <span class="et-line icon-magnifying-glass text-black mt-10"></span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-10 col-sm-9">
+                                                                    <div class="feture-content">
+                                                                        <h4 class="media-heading"><a href="#">Advanced Practice</a></h4>
+                                                                        <p>Student can come to class when no class time event they complete their class within 7 months</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="single-feature">
+                                                                    <div class="col-sm-3 col-md-2">
+                                                                        <div class="single-icon">
+                                                                            <a href="#">
+                                                                                <span class="et-line icon-puzzle text-black mt-10"></span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-9 col-md-10">
+                                                                        <div class="feture-content">
+                                                                            <h4 class="media-heading"><a href="#">Research</a></h4>
+                                                                            <p>If the student skillful in their course, trainer will guide them for creating own library</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <!-- / #Core Features End -->
+                                        </main>
+                                        <% include ../partial/footer %>
+        <!-- Footer Area End -->
+
+
+        <!--
+        JavaScripts
+        ========================== -->
+        <!-- <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/materialize.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCaX4fFEQRiTJoeclXKZRaFh2fYfps_Y&callback=initMap"></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+        <!-- <script src="js/jquery.nice-select.js"></script> -->
+        <!-- <script src="js/jquery.jCounter-0.1.4.js"></script>
+
+        <script src="js/main.js"></script> -->
+        <script src="/javascripts/minified/minified.js"></script>
+        <!-- <script src="js/map-init.js"></script> -->
+    </body>
+</html>

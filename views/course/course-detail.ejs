@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <head>
+      <% include ../partial/head %>
+    </head>
+    <body>
+        <% include ../partial/header %>
+        <main>
+            <!-- Static Banner Area Start -->
+            <section id="slider">
+                <div class="static-banner relative">
+                    <div class="overlay blue-overlay-5"></div>
+                    <div class="page-head">
+                        <h2 class="page-title"><%= course.name%></h2>
+                        <ul class="page-title-btn">
+                            <li><a href="/" target="_blank">Home <i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            <li><a href="/course/clist">Course <i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="active">Course Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Static Banner Area End -->
+            <!-- Web Design Course Area Start -->
+            <section class="section-full">
+                <div class="container">
+                    <div class="row">
+                        <div class="web-course">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="left-web-course">
+                                    <img src="../image/<%=course.imgUrl%>" alt="Course Image" >
+                                    <div class="tab-menu mt-20">
+                                        <ul id="tabs-swipe-demo" class="tabs course-tab">
+                                            <li class="tab"><a href="#objectives">Description</a></li>
+                                            <li class="tab"><a href="#course-outline">Course Outline</a></li>
+                                            <!-- <li class="tab"><a class="active" href="#comments">Comments</a></li> -->
+                                        </ul>
+                                    </div>
+                                    <div id="objectives" class="objectives mt-30">
+                                        <p><%=course.desc%></p>
+                                    </div>
+                                    <div id="course-outline" class="course-outline mt-30">
+                                      <% for(var i=0; i< course.coutline.length; i++){%>
+                                        <ul class="flex space-between">
+                                            <li><%=course.coutline[i].course%></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal<%=i%>">View Details</a></li>
+                                        </ul>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal<%=i%>" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <h2 class="text-center"><%=course.name%> course</h2>
+                                                    <h3><%=course.coutline[i].course%></h3>
+                                                    <p><%=course.coutline[i].detail%></p>
+                                                    <div class="back-btn text-right">
+                                                        <button class="btn" data-dismiss="modal" aria-label="Close">Back</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      <%}%>
+                                    </div>
+                                    <!-- <div id="comments" class="comments mt-30">
+                                        <div class="total-comment">
+                                            <div class="single-comment">
+                                                <div class="comment-head">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="/images/extra/comment-person.png" alt="...">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                            <p>12th Feb, 2017 at 05:56 pm</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-comment ml-20 mt-30">
+                                                <div class="comment-head">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="/images/extra/comment-person.png" alt="...">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                            <p>12th Feb, 2017 at 05:56 pm</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-comment mt-30">
+                                                <div class="comment-head">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="/images/extra/comment-person.png" alt="...">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                            <p>12th Feb, 2017 at 05:56 pm</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="leave-comment">
+                                            <h4>Leave a Commnt</h4>
+                                            <form action="#">
+                                                <div class="col-sm-7 pn1">
+                                                    <p><input placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" type="text"></p>
+                                                    <p><textarea placeholder="Comment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Comment'"></textarea></p>
+                                                </div>
+                                                <div class="col-sm-5 pn2">
+                                                    <p><input placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" type="email"></p>
+                                                    <p><input placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" type="text"></p>
+                                                    <p><button class="btn submit-btn">Submit Comment</button></p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="right-web-course">
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-profile-male"></span>Trainer’s Name</h4>
+                                        <h4><a href="/teacher/tdetail/<%=course.teacher_id._d%>"><%=course.teacher_id.name%></a></h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-pricetags"></span>Course Fee</h4>
+                                        <h4><%= course.fee %> Kyats</h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-profile-male"></span>Available Seats</h4>
+                                        <h4><%= course.seats %></h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line  icon-alarmclock"></span>Schedule</h4>
+                                        <h4><%=course.start%> to <%=course.end%></h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-bargraph"></span>Duration</h4>
+                                        <h4><%= course.week %> Weeks</h4>
+                                    </div>
+                                    <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-flag"></span>Days</h4>
+                                        <h4>Every <%= course.days %></h4>
+                                    </div>
+                                    <!-- <div class="single-info flex space-between">
+                                        <h4><span class="et-line icon-layers"></span>Typology</h4>
+                                        <h4>Premium</h4>
+                                    </div>
+                                    <div class="single-info click-review flex space-between">
+                                        <h4><span class="et-line icon-ribbon"></span>Reviews</h4>
+                                        <h4 class="review-star">
+                                            <span><i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i></span>
+                                                <span class="btn toltip">View Reveiw Details</span>
+                                            </h4>
+                                        </div> -->
+                                        <!-- <div class="expand-review">
+                                            <div class="teacher-rating-top">
+                                                <div class="rating flex">
+                                                    <div class="rating-box">
+                                                        <ul>
+                                                            <li>Average</li>
+                                                            <li class="av-rating">4.9</li>
+                                                            <li>(2 Ratings)</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="rating-body">
+                                                        <h4>Provide Your Rating</h4>
+                                                        <ul>
+                                                            <li>Quality <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>Quality <span class="normal"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>  Outstanding</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="feed-back mt-20">
+                                                    <h4>Your Feedback</h4>
+                                                    <textarea></textarea>
+                                                    <button class="btn">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="total-comment mt-50">
+                                                <div class="single-comment mt-30">
+                                                    <div class="comment-head">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" src="/images/extra/comment-person.png" alt="...">
+                                                                </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                                <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-body">
+                                                        <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-comment mt-30">
+                                                    <div class="comment-head">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" src="/images/extra/comment-person.png" alt="...">
+                                                                </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">Dorethy Kallyas</h4>
+                                                                <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-body">
+                                                        <p class="mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="text-center"><button class="btn enroll">Enroll the Course</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- / #Web Design Course End -->
+                <!-- Col To Action Start -->
+                <!-- <section class="cta-1 cta2 cta3">
+                    <div class="cta-bg2 relative"  data-velocity=".2">
+                        <div class="overlay cta-overlay-bg-blue"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cta-content">
+                                        <h2>Thousands of students are graduated. Why not you?</h2>
+                                        <form action="#" class="cta-register">
+                                            <div class="row">
+                                                <h3 class="text-center mb-40 primary-color fz-24">Register Now</h3>
+                                                <div class="col-sm-offset-1 col-sm-5 col-xs-12">
+                                                    <p><input type="text"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" placeholder="Enter your Full Name"></p>
+                                                    <p><input type="email"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" placeholder="Enter your Full Name"></p>
+                                                </div>
+                                                <div class="col-sm-5 col-xs-12">
+                                                    <p><input type="text"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" placeholder="Enter your Full Name"></p>
+                                                    <div class="select-ct">
+                                                        <select>
+                                                            <option value="1">Choose course</option>
+                                                            <option value="2">Saab</option>
+                                                            <option value="3">Opel</option>
+                                                            <option value="4">Audi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-center"><button class="submit-btn">Submit</button></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <!-- Col To Action End -->
+                <!-- Related Course Area Start -->
+                <!-- <section class="section-full course-grid1">
+                    <div class="container">
+                        <div class="popular-course">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-8 col-sm-12">
+                                    <div class="section-head text-center pb-50">
+                                        <h2 class="first-title">Related Courses</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adippisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="popular-course-body">
+                                    <div class="col-sm-4">
+                                        <div class="single-popular">
+                                            <img src="/images/course/r1.jpg" class="/images-responsive" alt="">
+                                            <div class="grid-course">
+                                                <div class="popular-course-content p-40">
+                                                    <h3><a href="14-course-details.html" target="_blank">Photography Course</a></h3>
+                                                    <p class="reviews pt-20">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="review-count">20 Reviews</span>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                                    <a href="14-course-details.html" target="_blank" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="course-bottom flex">
+                                                    <div class="single-bottom trainer">
+                                                        <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
+                                                    </div>
+                                                    <div class="single-bottom">
+                                                        <span>Total 15 Seats</span>
+                                                    </div>
+                                                    <div class="single-bottom amount">
+                                                        <span>$150</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="single-popular">
+                                            <img src="/images/course/r2.jpg" class="/images-responsive" alt="">
+                                            <div class="grid-course">
+                                                <div class="popular-course-content p-40">
+                                                    <h3><a href="14-course-details.html" target="_blank">Web Design Course</a></h3>
+                                                    <p class="reviews pt-20">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="review-count">20 Reviews</span>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                                    <a href="#" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="course-bottom flex">
+                                                    <div class="single-bottom trainer">
+                                                        <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
+                                                    </div>
+                                                    <div class="single-bottom">
+                                                        <span>Total 15 Seats</span>
+                                                    </div>
+                                                    <div class="single-bottom amount">
+                                                        <span>$150</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="single-popular">
+                                            <img src="/images/course/r3.jpg" class="/images-responsive" alt="">
+                                            <div class="grid-course">
+                                                <div class="popular-course-content p-40">
+                                                    <h3><a href="14-course-details.html" target="_blank">UI/UX Design Course</a></h3>
+                                                    <p class="reviews pt-20">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="review-count">20 Reviews</span>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                                    <a href="#" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="course-bottom flex">
+                                                    <div class="single-bottom trainer">
+                                                        <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
+                                                    </div>
+                                                    <div class="single-bottom">
+                                                        <span>Total 15 Seats</span>
+                                                    </div>
+                                                    <div class="single-bottom amount">
+                                                        <span>$150</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- / #Related Course End --> -->
+                </main>
+                <% include ../partial/footer %>
+            <!-- Footer Area Start -->
+
+            <!-- Footer Area End -->
+
+
+        <!--
+        JavaScripts
+        ========================== -->
+        <!-- <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/materialize.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script> -->
+        <!-- <%# <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCaX4fFEQRiTJoeclXKZRaFh2fYfps_Y&callback=initMap"></script> %> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+        <!-- <script src="js/jquery.nice-select.js"></script> -->
+        <!-- <script src="js/jquery.jCounter-0.1.4.js"></script>
+
+        <script src="js/main.js"></script> -->
+        <script src="/javascripts/minified/minified.js"></script>
+        <!-- <%# <script src="js/map-init.js"></script> %> -->
+    </body>
+</html>
