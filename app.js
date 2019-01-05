@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var course = require('./routes/course');
 var teacher = require('./routes/teacher');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -26,10 +29,21 @@ mongoose.connect('mongodb://yethuaung:zikimi95@ds163013.mlab.com:63013/techhouse
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'MongoDB connection error:'));
 
+app.use(session({
+  secret: '@FyU0cUkH@ck!n9',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/course',course);
 app.use('/teacher',teacher);
+app.use('/auth', auth);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
