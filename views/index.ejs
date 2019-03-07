@@ -173,7 +173,7 @@
                 </section>
                 <!-- / #Trainer Area End  -->
                 <!-- CTA Start -->
-                <section class="cta8 relative">
+                <!-- <section class="cta8 relative">
                     <div class="cta-right-fruit">
                         <img src="/images/cta/fruit.png" alt="" class="/images-responsive">
                     </div>
@@ -190,10 +190,10 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- CTA End -->
                 <!-- Blog Area Start -->
-                <section id="blog" class="section-full blog8">
+                <!-- <section id="blog" class="section-full blog8">
                     <div class="container">
                         <div class="blog">
                             <div class="row">
@@ -283,9 +283,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- / #Blog Area End  -->
-                <div class="container-fluid bg-gray">
+                <!-- <div class="container-fluid bg-gray">
                     <div class="container icons">
                         <div class="row" id="demo">
                             <div class="brand">
@@ -298,12 +298,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Testimonial Area Start -->
                 <section class="section-full designing-testimonial cooking-testimonial">
                     <div class="container">
                         <div class="row">
                             <div class="active-design-carousel">
+                              <%= for(var k =0; k< course.length;k++){%>
                                 <div class="single-carousel">
                                     <div class="col-sm-offset-2 col-sm-8">
                                         <div class="single-testimonial">
@@ -311,41 +312,14 @@
                                                 <img src="/images/testimonial/t3.jpg" alt="" class="/images-responsive">
                                             </div>
                                             <div class="test-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.</p>
-                                                <h4>Lara Croft Johnson</h4>
-                                                <span>Adobe Indesign</span>
+                                                <p><%= course[k].desc%></p>
+                                                <h4><%= coures[k].teacher_id.name%></h4>
+                                                <span><%= course[k].name%></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-carousel">
-                                    <div class="col-sm-offset-2 col-sm-8">
-                                        <div class="single-testimonial">
-                                            <div class="test-img">
-                                                <img src="/images/testimonial/t3.jpg" alt="" class="/images-responsive">
-                                            </div>
-                                            <div class="test-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.</p>
-                                                <h4>Lara Croft Johnson</h4>
-                                                <span>Adobe Indesign</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-carousel">
-                                    <div class="col-sm-offset-2 col-sm-8">
-                                        <div class="single-testimonial">
-                                            <div class="test-img">
-                                                <img src="/images/testimonial/t3.jpg" alt="" class="/images-responsive">
-                                            </div>
-                                            <div class="test-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.</p>
-                                                <h4>Lara Croft Johnson</h4>
-                                                <span>Adobe Indesign</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              <%}%>
                             </div>
                         </div>
                     </div>
