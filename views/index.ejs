@@ -93,107 +93,46 @@
                             <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-offset-10">
                                 <div class="section-head text-center pb-50">
                                     <h2 class="first-title">Developing Courses</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adippisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                                    <p>Our Training Center continue train following courses</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="popular-course-body">
+                              <% for(var i = 0; i< course.length; i++){%>
                                 <div class="col-sm-4">
                                     <div class="single-popular">
                                         <img src="/images/course/c1.jpg" class="/images-responsive" alt="">
                                         <div class="grid-course">
                                             <div class="popular-course-content p-40">
-                                                <h3><a href="14-course-details.html" target="_blank">Web Development Course</a></h3>
-                                                <p class="reviews pt-20">
+                                                <h3><a href="14-course-details.html" target="_blank"><%= course[i].name%></a></h3>
+                                                <!-- <p class="reviews pt-20">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <span class="review-count">20 Reviews</span>
-                                                </p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                                </p> -->
+                                                <p><%= course[i].desc%></p>
                                                 <a href="/cdetail" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
                                             </div>
                                             <div class="course-bottom flex">
                                                 <div class="single-bottom trainer">
-                                                    <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
+                                                    <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span><%= course[i].teacher_id.name%></span></a>
                                                 </div>
                                                 <div class="single-bottom">
-                                                    <span>Total 15 Seats</span>
+                                                    <span>Total <%=coure[i].seats%> Seats</span>
                                                 </div>
                                                 <div class="single-bottom amount">
-                                                    <span>$150</span>
+                                                    <span><%=coure[i].fee%></span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="single-popular">
-                                        <img src="/images/course/c2.jpg" class="/images-responsive" alt="">
-                                        <div class="grid-course">
-                                            <div class="popular-course-content p-40">
-                                                <h3><a href="14-course-details.html" target="_blank">Oriental Cuisines</a></h3>
-                                                <p class="reviews pt-20">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span class="review-count">20 Reviews</span>
-                                                </p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-                                                <a href="14-course-details.html" target="_blank" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="course-bottom flex">
-                                                <div class="single-bottom trainer">
-                                                    <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
-                                                </div>
-                                                <div class="single-bottom">
-                                                    <span>Total 15 Seats</span>
-                                                </div>
-                                                <div class="single-bottom amount">
-                                                    <span>$150</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="single-popular">
-                                        <img src="/images/course/c3.jpg" class="/images-responsive" alt="">
-                                        <div class="grid-course">
-                                            <div class="popular-course-content p-40">
-                                                <h3><a href="14-course-details.html" target="_blank">Contemporary Cuisines</a></h3>
-                                                <p class="reviews pt-20">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span class="review-count">20 Reviews</span>
-                                                </p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-                                                <a href="14-course-details.html" target="_blank" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="course-bottom flex">
-                                                <div class="single-bottom trainer">
-                                                    <a href="29-teacher-details.html" target="_blank"><span class="et-line icon-profile-male"></span><span>Tim Mathews</span></a>
-                                                </div>
-                                                <div class="single-bottom">
-                                                    <span>Total 15 Seats</span>
-                                                </div>
-                                                <div class="single-bottom amount">
-                                                    <span>$150</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <%}%>
                             </div>
                         </div>
                     </div>
@@ -207,56 +146,26 @@
                                 <div class="col-md-offset-2 col-md-8 col-sm-12">
                                     <div class="section-head text-center pb-100">
                                         <h2 class="first-title">Our Trainers</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adippisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                                        <p>They are our traning center's trainer</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="total-trainer">
+                                  <% for(var t = 0; t< teacher.length; teacher++){%>
                                     <div class="col-sm-3">
                                         <div class="single-trainer">
                                             <div class="trainer-img">
                                                 <img src="/images/teacher/b1.png" alt="" class="/images-responsive">
                                             </div>
                                             <div class="trainer-intro">
-                                                <h4><a href="/tdetail" >Lindsey Lorren</a></h4>
-                                                <span>Head Chef Oriental Cuisines</span>
+                                                <h4><a href="/tdetail" ><%=teacher[i].name%></a></h4>
+                                                <span><%= teacher[i].job %></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="single-trainer">
-                                            <div class="trainer-img">
-                                                <img src="/images/teacher/b1.png" alt="" class="/images-responsive">
-                                            </div>
-                                            <div class="trainer-intro">
-                                                <h4><a href="/tdetail">Lindsey Lorren</a></h4>
-                                                <span>Head Chef Oriental Cuisines</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="single-trainer">
-                                            <div class="trainer-img">
-                                                <img src="/images/teacher/b1.png" alt="" class="/images-responsive">
-                                            </div>
-                                            <div class="trainer-intro">
-                                                <h4><a href="/tdetail">Lindsey Lorren</a></h4>
-                                                <span>Head Chef Oriental Cuisines</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="single-trainer">
-                                            <div class="trainer-img">
-                                                <img src="/images/teacher/b1.png" alt="" class="/images-responsive">
-                                            </div>
-                                            <div class="trainer-intro">
-                                                <h4><a href="/tdetail">Lindsey Lorren</a></h4>
-                                                <span>Head Chef Oriental Cuisines</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  <%}%>
+
                                 </div>
                             </div>
                         </div>
