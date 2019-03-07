@@ -116,11 +116,11 @@
                                                     <span class="review-count">20 Reviews</span>
                                                 </p> -->
                                                 <p><%= course[i].desc%></p>
-                                                <a href="/cdetail/<%=course[i]._id%>" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
+                                                <a href="/course/cdetail/<%=course[i]._id%>" class="learn">Learn More  <i class="ml-10 fa fa-caret-right" aria-hidden="true"></i></a>
                                             </div>
                                             <div class="course-bottom flex">
                                                 <div class="single-bottom trainer">
-                                                    <a href="/tdetail/<%= course[i].teacher_id._id%>"><span class="et-line icon-profile-male"></span><span><%= course[i].teacher_id.name%></span></a>
+                                                    <a href="/teacher/tdetail/<%= course[i].teacher_id._id%>"><span class="et-line icon-profile-male"></span><span><%= course[i].teacher_id.name%></span></a>
                                                 </div>
                                                 <div class="single-bottom">
                                                     <span>Total <%=course[i].seats%> Seats</span>
@@ -159,7 +159,7 @@
                                                 <img src="/images/teacher/b1.png" alt="" class="/images-responsive">
                                             </div>
                                             <div class="trainer-intro">
-                                                <h4><a href="/tdetail/<%=teacher[t]._id%>" ><%=teacher[t].name%></a></h4>
+                                                <h4><a href="/teacher/tdetail/<%=teacher[t]._id%>" ><%=teacher[t].name%></a></h4>
                                                 <span><%= teacher[t].job %></span>
                                             </div>
                                         </div>
