@@ -7,7 +7,8 @@ passport.serializeUser(function (user, fn) {
 });
 
 passport.deserializeUser(function (id, fn) {
-  User.findOne({_id: id.doc._id}, function (err, user) {
+  console.log(id);
+  User.findOne({_id: id._id}, function (err, user) {
     fn(err, user);
   });
 });
@@ -18,13 +19,23 @@ passport.use(new TwitterStrategy({
     callbackURL: "https://techhouse-studio.herokuapp.com/auth/twitter/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({name: profile.displayName}, {name: profile.displayName,userid: profile.id}, function(err, user) {
-      if (err) {
-        console.log(err);
+    User.findOne({userid:profile.id},function (err,user) {
+      if(err) {
         return done(err);
       }
-      done(null, user);
-    });
+      if(user){
+        return done(null, user);
+      }else {
+        var user = new User();
+        user.name = profile.displayName;
+        user.userid = profile.id;
+        user.save(function (err2,rtn2) {
+          if(err2) throw err2;
+          return done(null, user);
+        })
+      }
+    })
+    console.log(profile);
   }
 ));
 

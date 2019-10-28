@@ -8,9 +8,23 @@ passport.use(new GoogleStrategy({
     callbackURL: "https://techhouse-studio.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-       User.findOrCreate({ userid: profile.id }, { name: profile.displayName,userid: profile.id }, function (err, user) {
-         return done(err, user);
-       });
+    User.findOne({userid:profile.id},function (err,user) {
+      if(err) {
+        return done(err);
+      }
+      if(user){
+        return done(null, user);
+      }else {
+        var user = new User();
+        user.name = profile.displayName;
+        user.userid = profile.id;
+        user.save(function (err2,rtn2) {
+          if(err2) throw err2;
+          return done(null, user);
+        })
+      }
+    })
+    console.log(profile);
   }
 ));
 
